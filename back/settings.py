@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o%gre7p#gn53-aqvhqwq=e1y#)#b6$13zp1rk)sl+uv7)u_!qw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -67,8 +67,11 @@ WSGI_APPLICATION = 'back.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'twitgram',
+        'CLIENT': {
+            'host': 'mongodb+srv://guinnod:User1234@cluster0.4zdz764.mongodb.net/?retryWrites=true&w=majority',
+        },
     }
 }
 
